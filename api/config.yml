@@ -1,0 +1,10 @@
+- request:
+    method: GET
+    url: ^/api/config/?$
+  response:
+    status: 200
+    latency: 400
+    headers:
+      content-type: application/json
+    file: data.json
+    body: OK
