@@ -1,5 +1,5 @@
 var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -30,7 +30,7 @@ var loaders = [{
 }, {
   test: /\.jsx$/,
   exclude: /node_modules/,
-  loaders: ['flowcheck', 'babel']
+  loader: 'babel'
 }, {
   test: /\.s?css$/,
   loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass')
@@ -65,6 +65,6 @@ config.devServer = {
   proxy: {
     '^/api': {target: 'http://localhost:8882'}
   }
-}
+};
 
 module.exports = config;
