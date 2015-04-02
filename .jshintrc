@@ -13,4 +13,11 @@
   "unused": true,
   "eqnull": true,
   "esnext": true,
+  "bitwise": true,
+  "curly": true,
+  "immed": true,
+  "noarg": true,
+  "quotmark": true,
+  "regexp": true,
+  "trailing": true
 }

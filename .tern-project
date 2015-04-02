@@ -4,14 +4,9 @@
     "ecma6",
     "browser"
   ],
-  "loadEagerly": [
-    "./public/js/**/*.js"
-  ],
-  "dontLoad": [
-    "./node_modules/**/*.js"
-  ],
   "plugins": {
     "complete_strings": {},
+    "component": {},
     "node": {},
     "jasmine": {},
     "requirejs": {},

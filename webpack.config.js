@@ -30,7 +30,7 @@ var loaders = [{
 }, {
   test: /\.jsx$/,
   exclude: /node_modules/,
-  loader: 'babel'
+  loaders: ['flowcheck', 'babel']
 }, {
   test: /\.s?css$/,
   loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass')
