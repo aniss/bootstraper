@@ -17,7 +17,7 @@
   "curly": true,
   "immed": true,
   "noarg": true,
-  "quotmark": true,
+  "quotmark": false,
   "regexp": true,
   "trailing": true
 }
