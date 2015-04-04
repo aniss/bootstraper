@@ -10,7 +10,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
   context: path.join(__dirname, 'public'),
-  entry: './js/index.jsx',
+  entry: './js/app.jsx',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js'
