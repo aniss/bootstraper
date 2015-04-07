@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --hot --progress --colors --inline --content-base ./build --port 4000",
-    "server": "stubby -dw ./api/config.yaml",
+    "server": "stubby -dw ./api/config.yaml"
   },
   "author": "",
   "license": "ISC",
