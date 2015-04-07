@@ -63,7 +63,7 @@ config.plugins = [
 
 config.devServer = {
   proxy: {
-    '^/api': {target: 'http://localhost:8882'}
+    '^/api/*': {target: 'http://localhost:8882'}
   }
 };
 
