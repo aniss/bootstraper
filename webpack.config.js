@@ -25,11 +25,7 @@ var config = {
 
 
 var loaders = [{
-  test: /\.js$/,
-  exclude: /node_modules/,
-  loader: 'babel'
-}, {
-  test: /\.jsx$/,
+  test: /\.jsx?$/,
   exclude: /node_modules/,
   loader: 'babel'
 }, {
@@ -42,6 +38,16 @@ var loaders = [{
 
 config.module = {
   loaders: loaders
+};
+
+
+/*************************
+ * Extensions to resolve *
+ *************************/
+
+
+config.resolve = {
+   extensions: ['', '.js', '.jsx'],
 };
 
 
