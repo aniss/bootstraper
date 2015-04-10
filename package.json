@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start ./public/test/karma.conf.js",
-    "webpack-dev": "webpack-dev-server --hot --progress --colors --inline --content-base ./build --port 4000",
+    "webpack-dev": "NODE_ENV=development webpack-dev-server --hot --progress --colors --inline --content-base ./build --port 4000",
     "server": "stubby -dw ./api/config.yaml",
     "dev": "npm run server & npm run webpack-dev"
   },
