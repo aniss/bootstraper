@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -24,11 +25,7 @@ var config = {
 
 
 var loaders = [{
-  test: /\.js$/,
-  exclude: /node_modules/,
-  loader: 'babel'
-}, {
-  test: /\.jsx$/,
+  test: /\.jsx?$/,
   exclude: /node_modules/,
   loader: 'babel'
 }, {
@@ -44,6 +41,16 @@ config.module = {
 };
 
 
+/*************************
+ * Extensions to resolve *
+ *************************/
+
+
+config.resolve = {
+   extensions: ['', '.js', '.jsx'],
+};
+
+
 /***********
  * Plugins *
  ***********/
@@ -53,7 +60,8 @@ config.plugins = [
   new ExtractTextPlugin('app.[hash].css'),
   new HtmlWebpackPlugin({
     template: path.join(__dirname, 'public/index.html')
-  })
+  }),
+  new webpack.ProvidePlugin({ fetch: 'isomorphic-fetch' })
 ];
 
 
