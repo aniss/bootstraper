@@ -2,6 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var RewirePlugin = require('rewire-webpack');
+var NODE_ENV = process.env.NODE_ENV;
+var DEVELOPMENT = (NODE_ENV === 'development');
 
 
 /**********************
@@ -14,7 +17,8 @@ var config = {
   entry: './js/app.jsx',
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: DEVELOPMENT ? 'http://localhost:4000/' : ''
   }
 };
 
@@ -27,7 +31,7 @@ var config = {
 var loaders = [{
   test: /\.jsx?$/,
   exclude: /node_modules/,
-  loader: 'babel'
+  loaders: DEVELOPMENT ? ['react-hot', 'babel'] : ['babel']
 }, {
   test: /\.s?css$/,
   loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass')
@@ -47,6 +51,7 @@ config.module = {
 
 
 config.resolve = {
+   root: path.resolve(__dirname, './public'),
    extensions: ['', '.js', '.jsx'],
 };
 
@@ -61,13 +66,15 @@ config.plugins = [
   new HtmlWebpackPlugin({
     template: path.join(__dirname, 'public/index.html')
   }),
-  new webpack.ProvidePlugin({ fetch: 'isomorphic-fetch' })
+  new webpack.ProvidePlugin({ fetch: 'isomorphic-fetch' }),
+  new webpack.DefinePlugin({ '__DEV__':  DEVELOPMENT}),
+  new RewirePlugin()
 ];
-
 
 /*********
  * Proxy *
  *********/
+
 
 config.devServer = {
   proxy: {
