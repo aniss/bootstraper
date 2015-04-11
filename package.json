@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start ./public/test/karma.conf.js",
-    "webpack-dev": "NODE_ENV=development webpack-dev-server --hot --progress --colors --inline --content-base ./build --port 4000",
+    "webpack-dev": "NODE_ENV=development webpack-dev-server --devtool eval --hot --progress --colors --inline --content-base ./build --port 4000",
     "server": "stubby -dw ./api/config.yaml",
     "dev": "npm run server & npm run webpack-dev"
   },
@@ -44,5 +44,8 @@
     "url-loader": "^0.5.5",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.7.0"
+  },
+  "devDependencies": {
+    "react-hot-loader": "^1.2.4"
   }
 }
