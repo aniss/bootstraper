@@ -2,7 +2,7 @@
     method: GET
     url: ^/api/config/?$
   response:
-    status: 200
+    status: 404
     latency: 400
     headers:
       content-type: application/json

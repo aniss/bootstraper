@@ -19,5 +19,8 @@
   "noarg": true,
   "quotmark": false,
   "regexp": true,
-  "trailing": true
+  "trailing": true,
+  "globals": {
+    "fetch": true
+  }
 }
