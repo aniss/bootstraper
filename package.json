@@ -7,7 +7,7 @@
     "test": "karma start ./public/test/karma.conf.js",
     "webpack-dev": "NODE_ENV=development webpack-dev-server --devtool eval --hot --progress --colors --inline --content-base ./build --port 4000",
     "start": "stubby -dw ./api/config.yaml",
-    "dev": "npm run server & npm run webpack-dev"
+    "dev": "npm run start & npm run webpack-dev"
   },
   "author": "",
   "license": "ISC",

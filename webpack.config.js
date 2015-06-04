@@ -1,3 +1,5 @@
+/*eslint-disable no-var */
+
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -51,7 +53,8 @@ config.module = {
 
 
 config.resolve = {
-   root: path.resolve(__dirname, './public/js'),
+   root: path.resolve(__dirname, './public'),
+   modulesDirectories: ['web_modules', 'node_modules', 'js', 'css'],
    extensions: ['', '.js', '.jsx']
 };
 
@@ -67,7 +70,7 @@ config.plugins = [
     template: path.join(__dirname, 'public/index.html')
   }),
   new webpack.ProvidePlugin({ fetch: 'isomorphic-fetch' }),
-  new webpack.DefinePlugin({ '__DEV__':  DEVELOPMENT}),
+  new webpack.DefinePlugin({'__DEV__': DEVELOPMENT}),
   new RewirePlugin()
 ];
 
