@@ -7,7 +7,9 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>Main App facebook</div>
+      <div>
+        My App.
+      </div>
     );
   }
 }
