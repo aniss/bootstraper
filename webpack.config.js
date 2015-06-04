@@ -51,8 +51,8 @@ config.module = {
 
 
 config.resolve = {
-   root: path.resolve(__dirname, './public'),
-   extensions: ['', '.js', '.jsx'],
+   root: path.resolve(__dirname, './public/js'),
+   extensions: ['', '.js', '.jsx']
 };
 
 
