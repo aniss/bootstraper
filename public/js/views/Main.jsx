@@ -7,7 +7,11 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>Random app</div>
+      <div className="grid">
+        <div className="grid-item">
+        </div>
+        <div className="grid-item top">2</div>
+      </div>
     );
   }
 }
