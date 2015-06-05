@@ -7,9 +7,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
-        My App.
-      </div>
+      <div>Random app</div>
     );
   }
 }

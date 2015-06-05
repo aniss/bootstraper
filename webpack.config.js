@@ -36,7 +36,7 @@ var loaders = [{
   loaders: DEVELOPMENT ? ['react-hot', 'babel'] : ['babel']
 }, {
   test: /\.s?css$/,
-  loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass')
+  loader: ExtractTextPlugin.extract('style', 'style!css!autoprefixer!sass')
 }, {
   test: /\.(otf|eot|svg|ttf|woff|png|jpg)$/,
   loader: 'url-loader?limit=8192'
