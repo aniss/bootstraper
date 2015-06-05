@@ -1,4 +1,4 @@
-'use strict';
+/* eslint-disable no-var */
 
 var webpack = require('../../webpack.config');
 webpack.devtool = 'inline-source-map';
@@ -9,7 +9,7 @@ webpack.module.preLoaders = [{
 }];
 
 
-module.exports = function(config) {
+module.exports = function karmaConfig(config) {
   config.set({
     basePath: '.',
     singleRun: true,
@@ -21,7 +21,7 @@ module.exports = function(config) {
       'test.js': ['webpack', 'sourcemap']
     },
     coverageReporter: {
-      dir : 'coverage/',
+      dir: 'coverage/',
       reporters: [
         { type: 'html', subdir: 'report-html' },
         { type: 'lcov', subdir: 'report-lcov' }

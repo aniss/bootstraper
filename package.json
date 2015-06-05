@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "karma start ./public/test/karma.conf.js",
     "webpack-dev": "NODE_ENV=development webpack-dev-server --devtool eval --hot --progress --colors --inline --content-base ./build --port 4000",
@@ -12,17 +13,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^0.13.3",
+    "baobab": "^1.1.0",
+    "baobab-react": "^0.1.1",
     "isomorphic-fetch": "^2.1.0",
+    "react": "^0.13.3",
     "react-router": "^0.13.3"
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",
-    "babel": "^5.4.7",
-    "babel-eslint": "^3.1.11",
-    "babel-loader": "^5.1.3",
-    "baobab": "^1.1.0",
-    "baobab-react": "^0.1.1",
+    "babel": "^5.5.2",
+    "babel-eslint": "^3.1.13",
+    "babel-loader": "^5.1.4",
     "css-loader": "^0.14.4",
     "eslint": "^0.22.1",
     "eslint-plugin-react": "^2.5.0",
